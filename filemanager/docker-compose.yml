@@ -9,6 +9,7 @@ services:
     restart: always
     volumes:
       - /mnt/movie:/srv/movie
+      - /mnt/hentai:/srv/hentai
       - .data/root:/srv
       - .data/database.db:/etc/database.db
       - ./data/.filebrowser.json:/.filebrowser.json
