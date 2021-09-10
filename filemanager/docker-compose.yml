@@ -13,3 +13,17 @@ services:
       - .data/root:/srv
       - .data/database.db:/etc/database.db
       - ./data/.filebrowser.json:/.filebrowser.json
+  ariang:
+    image: hurlenko/aria2-ariang
+    ports:
+      - 8081:8080
+    volumes:
+      - /mnt/hentai/download:/aria2/data
+      - /CONFIG_DIR:/aria2/conf
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - RPC_SECRET=secret
+      - DOMAIN=0.0.0.0:8080
+      - ARIA2RPCPORT=443
+    restart: always
